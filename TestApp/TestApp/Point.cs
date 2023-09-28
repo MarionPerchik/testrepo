@@ -1,4 +1,4 @@
-﻿using System;
+﻿﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,9 +8,13 @@ namespace TestApp
 {
     class Point
     {
-        int x;
-        int y;
-        char sym;
+        public int x;
+        public int y;
+        public char sym;
+
+        public Point()
+        {
+        }
 
         public Point(int x, int y, char sym)
         {
@@ -19,6 +23,17 @@ namespace TestApp
             this.sym = sym;
         }
 
+        public Point(Point p)
+        {
+            x = p.x;
+            y = p.y;
+            sym = p.sym;
+        }
+        public bool IsHit(Point p)
+        {
+            return p.x == this.x && p.y == this.y;
+        }
+        
         public void SetX(int x)
         {
             if (x >= 0)
